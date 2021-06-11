@@ -13,7 +13,7 @@ pipeline{
        Name = readMavenPom().getName()
        GroupId = readMavenPom().getGroupId()
     }
-    
+
     stages {
         // Specify various stage with in stages
 
@@ -24,7 +24,7 @@ pipeline{
             }
         }
 
-        // Stage2 : Testing
+        // Stage 2 : Testing
         stage ('Test'){
             steps {
                 echo ' testing......'
@@ -32,24 +32,30 @@ pipeline{
             }
         }
 
-        // Stage3 : Publish the artifacts to Ansible Node
-        stage ('Publish artifact to Ansible Managed Node'){
+        // Stage 3 : Publish the artifacts to Ansible Node
+        stage ('Publish artifact to a folder in the Ansible Controller Node'){
             steps {
-                echo ' Publish artifact to Ansible Managed Node......'
+                echo ' Publish artifact to a folder in the Ansible Controller Node......'
             }
         }
 
         // Stage 4 : Print some information
         stage ('Print Environment variables'){
-                    steps {
-                        echo "Artifact ID is '${ArtifactId}'"
-                        echo "Version is '${Version}'"
-                        echo "GroupID is '${GroupId}'"
-                        echo "Name is '${Name}'"
-                    }
-                }
+            steps {
+                echo "Artifact ID is '${ArtifactId}'"
+                echo "Version is '${Version}'"
+                echo "GroupID is '${GroupId}'"
+                echo "Name is '${Name}'"
+            }
+        }
 
 
+        // Stage 5 : Deploy the war file to the Docker Host
+        stage ('Deploy the war file to the Docker Host'){
+            steps {
+                echo ' Deploy the war file to the Docker Host......'
+            }
+        }
 
 
 
