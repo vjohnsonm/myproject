@@ -36,7 +36,7 @@ pipeline{
         stage ('Publish artifact to a folder in the Ansible Controller'){
             steps {
                 echo ' Publish artifact to a folder in the Ansible Controller......'
-                sh ' scp /home/jenkins-slave-01/workspace/pipeline/target/myproject-0.0.1.war ansibleadmin@10.0.1.12:/opt/playbooks/myproject.war'
+                sh 'scp ansibleadmin@10.0.1.11:/home/jenkins-slave-01/workspace/pipeline/target/myproject-0.0.1.war ansibleadmin@10.0.1.12:/home/ansibleadmin/latest.war'
             }
         }
 
@@ -50,11 +50,25 @@ pipeline{
             }
         }
 
-
-        // Stage 5 : Deploy the war file to the Docker Host
-        stage ('Deploy the war file to the Docker Host'){
+        // Stage 5 : Copying the latest war file to the Docker Host, creating docker file, build image and run the container
+        stage ('Deploy to Docker'){
             steps {
-                echo ' Deploy the war file to the Docker Host......'
+                echo "Deploying ...."
+                sshPublisher(publishers: 
+                [sshPublisherDesc(
+                    configName: 'Ansible_Controller', 
+                    transfers: [
+                        sshTransfer(
+                                cleanRemote:false,
+                                execCommand: 'ansible-playbook /opt/playbooks/deploy_docker.yaml -i /opt/playbooks/hosts',
+                                execTimeout: 120000
+                        )
+                    ], 
+                    usePromotionTimestamp: false, 
+                    useWorkspaceInPromotion: false, 
+                    verbose: false)
+                    ])
+            
             }
         }
 
