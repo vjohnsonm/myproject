@@ -33,9 +33,10 @@ pipeline{
         }
 
         // Stage 3 : Publish the artifacts to Ansible Node
-        stage ('Publish artifact to a folder in the Ansible Controller Node'){
+        stage ('Publish artifact to a folder in the Ansible Controller'){
             steps {
-                echo ' Publish artifact to a folder in the Ansible Controller Node......'
+                echo ' Publish artifact to a folder in the Ansible Controller......'
+                sh ' scp /home/jenkins-slave-01/workspace/pipeline/target/myproject-0.0.1.war ansibleadmin@10.0.1.12:/opt/playbooks/myproject.war'
             }
         }
 
