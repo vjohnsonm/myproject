@@ -36,7 +36,7 @@ pipeline{
         stage ('Publish artifact to a folder in the Ansible Controller'){
             steps {
                 echo ' Publish artifact to a folder in the Ansible Controller......'
-                sh 'scp ansibleadmin@10.0.1.11:/home/jenkins-slave-01/workspace/pipeline/target/myproject-0.0.1.war ansibleadmin@10.0.1.12:/opt/playbooks/latest.war'
+                sh 'scp jenkins-slave-01@10.0.1.11:/home/jenkins-slave-01/workspace/pipeline/target/myproject-0.0.1.war ansibleadmin@10.0.1.12:/opt/playbooks/latest.war'
             }
         }
 
