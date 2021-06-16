@@ -38,7 +38,7 @@ pipeline{
                 //#Note:  The below command will always give error :  Permission denied (publickey,gssapi-keyex,gssapi-with-mic). To fix, from the src remove the jenkins-slave-01@10.0.1.11
                 //# scp  jenkins-slave-01@10.0.1.11:/home/jenkins-slave-01/workspace/pipeline/target/myproject-0.0.1.war jenkins-slave-01@10.0.1.12:/home/jenkins-slave-01
                 echo ' Publish artifact to a folder in the Ansible Controller......'
-                sh 'scp /home/jenkins-slave-01/workspace/pipeline/target/myproject-0.0.1.war jenkins-slave-01@10.0.1.12:/home/ansibleadmin/latest.war'
+                sh 'scp /home/jenkins-slave-01/workspace/pipeline/target/myproject-0.0.1.war jenkins-slave-01@10.0.1.12:/opt/latestwar/latest.war'
             }
         }
 
