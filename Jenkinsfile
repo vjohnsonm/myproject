@@ -52,17 +52,17 @@ pipeline{
             }
         }
 
-        // Stage 5 : Copying the latest war file to the Docker Host, creating docker file, build image and run the container
+        // Stage 5 : Creating and Deploying the build artifact for Docker
         stage ('Deploy to Docker'){
             steps {
                 echo "Deploying ...."
                 sshPublisher(publishers: 
                 [sshPublisherDesc(
-                    configName: 'Ansible_Controller', 
+                    configName: 'AnsibleController', 
                     transfers: [
                         sshTransfer(
                                 cleanRemote:false,
-                                execCommand: 'ansible-playbook /opt/playbooks/deploy_docker.yaml -i /opt/playbooks/hosts',
+                                execCommand: 'ansible-playbook /home/ansibleadmin/docker_createimage_deploy.yaml -i /home/ansibleadmin/hosts',
                                 execTimeout: 120000
                         )
                     ], 
