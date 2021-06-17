@@ -52,7 +52,35 @@ pipeline{
             }
         }
 
-        // Stage 5 : Creating and Deploying the build artifact for Docker
+
+
+        // Stage 5 : Deploying the build artifact to Apache Tomcat
+        stage ('Deploy to Tomcat'){
+            steps {
+                echo "Deploying ...."
+                sshPublisher(publishers: 
+                [sshPublisherDesc(
+                    configName: 'Ansible_Controller', 
+                    transfers: [
+                        sshTransfer(
+                                cleanRemote:false,
+                                execCommand: 'ansible-playbook /opt/playbooks/downloadanddeploy_as_tomcat_user.yaml -i /opt/playbooks/hosts',
+                                execTimeout: 120000
+                        )
+                    ], 
+                    usePromotionTimestamp: false, 
+                    useWorkspaceInPromotion: false, 
+                    verbose: false)
+                    ])
+            
+            }
+        }
+
+
+
+        /*
+
+        // Stage 6 : Creating and Deploying the build artifact for Docker
         stage ('Deploy to Docker'){
             steps {
                 echo "Deploying ...."
@@ -74,7 +102,7 @@ pipeline{
             }
         }
 
-
+        */
 
     }
 
