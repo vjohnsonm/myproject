@@ -63,7 +63,7 @@ pipeline{
                     transfers: [
                         sshTransfer(
                                 cleanRemote:false,
-                                execCommand: 'ansible-playbook /home/ansibleadmin/deploy_docker.yaml -i /home/ansibleadmin/hosts',
+                                execCommand: 'ansible-playbook /opt/playbooks/deploy_docker.yaml -i /home/ansibleadmin/hosts',
                                 execTimeout: 120000
                         )
                     ], 
