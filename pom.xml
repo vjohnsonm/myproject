@@ -4,7 +4,7 @@
   <groupId>com.johnson.capstone</groupId>
   <artifactId>myproject</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1</version>
+  <version>1.0</version>
   <name>johnsonassessment</name>
   <url>http://maven.apache.org</url>
   <dependencies>
