@@ -77,7 +77,7 @@
         </div>
         <div class="col-md-4">
             <h2>Ansible</h2>
-            <p>I have used Ansible as my deployment tool. I have used playbbook to make use of the war file, crearte a dockerfile, create a image and run the container on the DockerHost.</p>
+            <p>I have used Ansible as my deployment tool. I have used playbook to make use of the war file, crearte a dockerfile, create a image and run the container on the DockerHost.</p>
 
         </div>
 
