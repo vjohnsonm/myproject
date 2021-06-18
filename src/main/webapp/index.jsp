@@ -93,7 +93,7 @@
         </div>
         <div class="col-md-4">
             <h2>Jenkins Build Execution</h2>
-            <p>Jenkisn has been configured to do Poll SCM. The Jenkins pipeline script will as part of pipeline stage create a dockerfile, create a image and run the container on the DockerHost.</p>
+            <p>Jenkins has been configured to do Poll SCM. The Jenkins pipeline script will as part of pipeline stage create a dockerfile, create a image and run the container on the DockerHost.</p>
 
         </div>
         <div class="col-md-4">
