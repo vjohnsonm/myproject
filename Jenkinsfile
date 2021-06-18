@@ -53,7 +53,7 @@ pipeline{
             }
         }
 
-        // Stage 6 : Creating and Deploying the build artifact for Docker
+        // Stage 5 : Creating and Deploying the build artifact for Docker
         stage ('Deploy to Docker'){
             steps {
                 echo "Deploying ...."
@@ -63,7 +63,7 @@ pipeline{
                     transfers: [
                         sshTransfer(
                                 cleanRemote:false,
-                                execCommand: 'ansible-playbook /opt/playbooks/deploy_docker.yaml -i /home/ansibleadmin/hosts',
+                                execCommand: 'ansible-playbook /opt/playbooks/deploy_docker.yaml -i /opt/playbooks/hosts',
                                 execTimeout: 120000
                         )
                     ], 
