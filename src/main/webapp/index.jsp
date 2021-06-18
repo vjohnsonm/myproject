@@ -52,13 +52,24 @@
     <div class="row">
         <div class="col-md-4">
             <h2>Terraform</h2>
-            <p>I have used Terraform as my IaC tool. I am using terraform files to create the EC2 instances for the project</p>
-
+            <p>I have used Terraform as my IaC tool. I am using terraform files to create the below EC2 instances for the project</p>
+            <ol>
+                <li>JenkinsMaster/li>
+                <li>JenkinsSlave</li>
+                <li>AnsibleController</li>
+                <li>DockerHost</li>
+              </ol> 
         </div>
         <div class="col-md-4">
             <h2>Git,Maven and GitHub</h2>
             <p>I have used Git for version controlling. Maven as a build tool. I have used GitHub as my source code repository </p>
-
+            <ol>
+                <li>github plugin</li>
+                <li>git plugin</li>
+                <li>maven integration</li>
+                <li>publish over ssh</li>
+                <li>pipeline utility step</li>
+              </ol>  
         </div>
         <div class="col-md-4">
             <h2>Setting up Jenkins With Master Slave Configuration</h2>
@@ -67,17 +78,27 @@
         </div>
         <div class="col-md-4">
             <h2>Configured GitHub, Maven, Publish Over SSH, Pipeline Utiliy, Docker PipeLine plugins,  SSH Build agent plugin</h2>
-            <p>I have used the plugins to help with the running of the build jobs.</p>
+            <p>I have used the jenkins plugins to help with the running of the build jobs.</p>
 
         </div>
         <div class="col-md-4">
             <h2>Docker for Containerization</h2>
-            <p>I have used Docker for Containerization. Jenkins will publish the artifacts to Nexus after succesful build </p>
+            <p>I have used Docker for Containerization. Dockerfile, Artifact image and container will be created with Ansible playbook</p>
 
         </div>
         <div class="col-md-4">
             <h2>Ansible</h2>
-            <p>I have used Ansible as my deployment tool. I have used playbook to make use of the war file, crearte a dockerfile, create a image and run the container on the DockerHost.</p>
+            <p>I have used Ansible for configuration management tool to help with deploying the artifacts on the Docker Hosts.</p>
+
+        </div>
+        <div class="col-md-4">
+            <h2>Jenkins Build Execution</h2>
+            <p>Jenkisn has been configured to do Poll SCM. The Jenkins pipeline script will as part of pipeline stage create a dockerfile, create a image and run the container on the DockerHost.</p>
+
+        </div>
+        <div class="col-md-4">
+            <h2>Access the application on the DockerHost </h2>
+            <p>The web application can be accessed on the browser using:   http://3.16.81.48:8080/latest/</p>
 
         </div>
 
