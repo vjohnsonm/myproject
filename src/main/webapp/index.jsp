@@ -41,8 +41,8 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Hello</h1>
-        <p>This is Johnson's Demo Project</p>
+        <h2>SimpliLearn Capstone Project Submission</h2>
+        <p>This is Johnson's Project implementaion for Capstone Project 2 - Hangout Point.</p>
         <p><a class="btn btn-primary btn-lg" role="button">Final Assessment Capstone &raquo;</a></p>
     </div>
 </div>
