@@ -71,13 +71,13 @@
 
         </div>
         <div class="col-md-4">
-            <h2>Docker for Containerization and Docker Hub as the Container Repository</h2>
-            <p>I have used Docker for Containerization and Docker Hub as the Container Repository. Jenkins will publish the artifacts to Nexus after succesful build </p>
+            <h2>Docker for Containerization</h2>
+            <p>I have used Docker for Containerization. Jenkins will publish the artifacts to Nexus after succesful build </p>
 
         </div>
         <div class="col-md-4">
             <h2>Ansible</h2>
-            <p>I have used Ansible as my deployment tool. I have used some playbooks for my Demo.</p>
+            <p>I have used Ansible as my deployment tool. I have used playbbook to make use of the war file, crearte a dockerfile, create a image and run the container on the DockerHost.</p>
 
         </div>
 
